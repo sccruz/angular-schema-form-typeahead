@@ -1,28 +1,7 @@
-<!--<script type='text/javascript'>
-    angular.module('typeahead').controller('TypeaheadController', ['$scope', '$http', function ($scope, $http) {
-        $scope.getItem = {
-            readOnly: true
-        };
-        $scope.init = function(category, name) {
-          console.log('init is called', category);
-            $scope.getItem.category = category;
-          $scope.getItem.name = name;
-        };
-        $scope.items = [];
-        $scope.fetchResult = function () {
-            $http.post('http://www.networknt.com/api/rs', $scope.getItem)
-                    .success(function (result, status, headers, config) {
-                        $scope.items = result;
-                        console.log('items', $scope.items);
-                    })
-        };
-        $scope.fetchResult();
-    }]);
-</script>-->
 <div class="form-group {{form.htmlClass}}" ng-class="{'has-error': hasError()}">
     <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
     
-    <div ng-class="{'input-group': (form.fieldAddonLeft || form.fieldAddonRight)}">
+    <div ng-class="{'input-group': (form.fieldAddonLeft || form.fieldAddonRight)}" class="typeahead">
         <span ng-if="form.fieldAddonLeft"
               class="input-group-addon"
               ng-bind-html="form.fieldAddonLeft"></span>

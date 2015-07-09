@@ -3,7 +3,7 @@ angular.module('schemaForm').config(
             function (schemaFormProvider, schemaFormDecoratorsProvider, sfPathProvider) {
 
                 var typeahead = function (name, schema, options) {
-                    if (schema.type === 'string' && schema.format === 'typeahead') {
+                    if (schema.type === 'object' && schema.format === 'typeahead') {
                         var f = schemaFormProvider.stdFormObj(name, schema, options);
                         f.key = options.path;
                         f.type = 'typeahead';
@@ -12,7 +12,7 @@ angular.module('schemaForm').config(
                     }
                 };
 
-                schemaFormProvider.defaults.string.unshift(typeahead);
+                schemaFormProvider.defaults.object.unshift(typeahead);
 
                 //Add to the bootstrap directive
                 schemaFormDecoratorsProvider.addMapping(
