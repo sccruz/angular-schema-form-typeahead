@@ -14,6 +14,7 @@
                typeahead="{{form.typeahead}}"
                typeahead-on-select="{{form.typeaheadOnSelect}}"
                name="{{form.key.slice(-1)[0]}}"
+               ng-disabled="$$value$$ != null && {{form.disabled}}"
                autocomplete="off" />
         <span ng-if="form.fieldAddonRight"
               class="input-group-addon"
